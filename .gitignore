@@ -4,6 +4,9 @@ dist/
 # generated types
 .astro/
 
+# obsidian config
+src/content/.obsidian/workspace.json
+
 # dependencies
 node_modules/
 
