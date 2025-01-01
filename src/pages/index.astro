@@ -8,6 +8,6 @@ const posts = await getCollection('test');
 <Layout>
 	<h1>Index</h1>
 	<ul>
-		{posts.map(p => <li><a href={`/${p.id}`}>{p.id}</a></li>)}
+		{posts.map(p => <li><a href={`./${p.id}`}>{p.id}</a></li>)}
 	</ul>
 </Layout>
