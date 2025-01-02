@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('test');
+  const posts = await getCollection('all');
   return posts.map(post => ({
     params: { path: post.id },
     props: { post },
@@ -15,6 +15,14 @@ const { Content } = await render(post);
 ---
 
 <Layout>
-  <small>{post.data.date}</small>
-    <Content />
+  <dl>
+    <dt>date</dt>
+    <dd>{post.data.date}</dd>
+    <dt>tags</dt>
+    <dd>{post.data.tags?.join(', ')}</dd>
+    <dt>category</dt>
+    <dd>{post.data.category}</dd>
+  </dl>
+
+  <Content />
 </Layout>
