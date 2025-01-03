@@ -1,13 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-
-const posts = await getCollection('all');
+import Base from "../layouts/Base.astro"
 ---
 
-<Layout>
-	<h1>Index</h1>
-	<ul>
-		{posts.map(p => <li><a href={`./${p.id}`}>{p.id}</a></li>)}
-	</ul>
-</Layout>
+<Base title="Index">
+    <i>Who are you?</i>
+    <i>What do you want?</i>
+    <i>How did you find this place?</i>
+</Base>
