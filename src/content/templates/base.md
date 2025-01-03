@@ -1,5 +1,5 @@
 ---
-date: {{date}}
-tags: 
-category: 
+date: { { date } }
+tags:
+category:
 ---

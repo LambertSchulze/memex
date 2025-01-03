@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 
 interface Props {
-    post: CollectionEntry<"other">;
+  post: CollectionEntry<"other">;
 }
 
 const { post } = Astro.props;
@@ -11,30 +11,30 @@ const { Content } = await render(post);
 ---
 
 <main>
-    <article>
-        <dl>
-            <dt>date</dt>
-            <dd>{post.data.date}</dd>
-            <dt>tags</dt>
-            <dd>{post.data.tags?.join(", ")}</dd>
-            <dt>category</dt>
-            <dd>{post.data.category}</dd>
-        </dl>
+  <article>
+    <dl>
+      <dt>date</dt>
+      <dd>{post.data.date}</dd>
+      <dt>tags</dt>
+      <dd>{post.data.tags?.join(", ")}</dd>
+      <dt>category</dt>
+      <dd>{post.data.category}</dd>
+    </dl>
 
-        <Content />
-    </article>
+    <Content />
+  </article>
 </main>
 
 <style>
-    article {
-        max-width: 60ch;
+  article {
+    max-width: 60ch;
 
-        border: thick double gainsboro;
+    border: thick double gainsboro;
 
-        padding-inline: 1ch;
-    }
+    padding-inline: 1ch;
+  }
 
-    dl {
-        color: lightgray;
-    }
+  dl {
+    color: lightgray;
+  }
 </style>

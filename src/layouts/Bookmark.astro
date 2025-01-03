@@ -1,26 +1,27 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { render } from 'astro:content';
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 
 interface Props {
-    post: CollectionEntry<"bookmarks">
+  post: CollectionEntry<"bookmarks">;
 }
 
 const { post } = Astro.props;
 const { Content } = await render(post);
 ---
+
 <main>
-    <article>
-        <Content />
-    </article>
+  <article>
+    <Content />
+  </article>
 </main>
 
 <style>
-    article {
-        max-width: 60ch;
+  article {
+    max-width: 60ch;
 
-        border: thick double seashell;
+    border: thick double seashell;
 
-        padding-inline: 1ch;
-    }
+    padding-inline: 1ch;
+  }
 </style>

@@ -3,18 +3,18 @@ import { getCollection, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import Bookmark from "../layouts/Bookmark.astro";
 import Quote from "../layouts/Quote.astro";
-import Default from "../layouts/Default.astro"
+import Default from "../layouts/Default.astro";
 
 export async function getStaticPaths() {
-    const bookmarks = await getCollection("bookmarks");
-    const quotes = await getCollection("quotes");
-    const other = await getCollection("other");
-    const posts = [ ...bookmarks, ...quotes, ...other ];
+  const bookmarks = await getCollection("bookmarks");
+  const quotes = await getCollection("quotes");
+  const other = await getCollection("other");
+  const posts = [...bookmarks, ...quotes, ...other];
 
-    return posts.map((post) => ({
-        params: { path: post.id },
-        props: { post },
-    }));
+  return posts.map((post) => ({
+    params: { path: post.id },
+    props: { post },
+  }));
 }
 
 const { post } = Astro.props;
@@ -22,7 +22,7 @@ const { Content } = await render(post);
 ---
 
 <Base title={post.data.date} tags={post.data.tags}>
-    {post.collection === 'bookmarks' && <Bookmark post={post} />}
-    {post.collection === 'quotes' && <Quote post={post} />}
-    {post.collection === 'other' && <Default post={post} />}
+  {post.collection === "bookmarks" && <Bookmark post={post} />}
+  {post.collection === "quotes" && <Quote post={post} />}
+  {post.collection === "other" && <Default post={post} />}
 </Base>
