@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "astro": "^5.1.1",
+    "astro-html-beautifier": "^1.0.4",
     "remark-wiki-link": "^2.0.1"
   },
   "devDependencies": {
