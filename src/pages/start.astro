@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const bookmarks = await getCollection('bookmarks');
+const quotes = await getCollection('quotes');
+const other = await getCollection('other');
+---
+
+<Base title="Index">
+	<h1>Index</h1>
+
+	<h2>Bookmarks</h2>
+	<ul>
+		{bookmarks.map(p => <li><a href={`./${p.id}`}>{p.id}</a></li>)}
+	</ul>
+
+	<h2>Quotes</h2>
+	<ul>
+		{quotes.map(p => <li><a href={`./${p.id}`}>{p.id}</a></li>)}
+	</ul>
+
+	<h2>Other</h2>
+	<ul>
+		{other.map(p => <li><a href={`./${p.id}`}>{p.id}</a></li>)}
+	</ul>
+</Base>
