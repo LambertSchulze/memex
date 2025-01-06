@@ -4,6 +4,8 @@ import Base from "../layouts/Base.astro";
 
 const bookmarks = await getCollection("bookmarks");
 const quotes = await getCollection("quotes");
+const songs = await getCollection("songs");
+const things = await getCollection("things");
 const other = await getCollection("other");
 ---
 
@@ -25,6 +27,28 @@ const other = await getCollection("other");
   <ul>
     {
       quotes.map((p) => (
+        <li>
+          <a href={`./${p.id}`}>{p.id}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Songs</h2>
+  <ul>
+    {
+      songs.map((p) => (
+        <li>
+          <a href={`./${p.id}`}>{p.id}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Things</h2>
+  <ul>
+    {
+      things.map((p) => (
         <li>
           <a href={`./${p.id}`}>{p.id}</a>
         </li>
