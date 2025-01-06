@@ -25,6 +25,18 @@ const quotes = defineCollection({
   }),
 });
 
+const things = defineCollection({
+  loader: glob({
+    pattern: "*.md",
+    base: "./src/content/things",
+  }),
+  schema: z.object({
+    date: z.date(),
+    tags: z.array(z.string()).nullable(),
+    category: z.enum(["Thing"]),
+  }),
+});
+
 const other = defineCollection({
   loader: glob({
     pattern: "*.md",
@@ -37,4 +49,4 @@ const other = defineCollection({
   }),
 });
 
-export const collections = { bookmarks, quotes, other };
+export const collections = { bookmarks, quotes, things, other };
