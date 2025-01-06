@@ -1,0 +1,18 @@
+{
+  "livePreview": false,
+  "promptDelete": false,
+  "showInlineTitle": false,
+  "showRibbon": true,
+  "autoConvertHtml": false,
+  "alwaysUpdateLinks": true,
+  "userIgnoreFilters": [
+    "layouts/",
+    "pages/",
+    "plugins/",
+    "content.config.ts",
+    "components/",
+    "templates/"
+  ],
+  "showUnsupportedFiles": false,
+  "attachmentFolderPath": "assets"
+}
