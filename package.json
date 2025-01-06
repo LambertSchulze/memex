@@ -12,7 +12,9 @@
   "dependencies": {
     "astro": "^5.1.1",
     "astro-html-beautifier": "^1.0.4",
-    "remark-wiki-link": "^2.0.1"
+    "mdast-util-find-and-replace": "^3.0.2",
+    "remark-wiki-link": "^2.0.1",
+    "unist-builder": "^4.0.0"
   },
   "devDependencies": {
     "prettier": "^3.4.2",
