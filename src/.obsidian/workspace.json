@@ -154,6 +154,9 @@
   },
   "active": "59555789d2bd0db6",
   "lastOpenFiles": [
+    "layouts/Song.astro",
+    "layouts/Default copy.astro",
+    "layouts/Card.astro",
     "layouts/Thing.astro",
     "layouts/Quote copy.astro",
     "pages/1735919712.md",
