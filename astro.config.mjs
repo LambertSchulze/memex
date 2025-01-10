@@ -5,6 +5,8 @@ import htmlBeautifier from "astro-html-beautifier";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://lambertschulze.github.io/memex/',
+
   markdown: {
     remarkPlugins: [
       wikiLinkImages,
