@@ -34,6 +34,9 @@ const songs = defineCollection({
     date: z.date(),
     tags: z.array(z.string()).nullable(),
     category: z.enum(["Song"]),
+    title: z.string(),
+    artist: z.string(),
+    album: z.string(),
   }),
 });
 

@@ -13,12 +13,12 @@ const { Content } = await render(post);
 <main>
   <article>
     <dl>
-      <dt>date</dt>
-      <dd>{post.data.date}</dd>
-      <dt>tags</dt>
-      <dd>{post.data.tags?.join(", ")}</dd>
-      <dt>category</dt>
-      <dd>{post.data.category}</dd>
+      <dt>title</dt>
+      <dd>{post.data.title}</dd>
+      <dt>artist</dt>
+      <dd>{post.data.artist}</dd>
+      <dt>album</dt>
+      <dd>{post.data.album}</dd>
     </dl>
 
     <Content />
@@ -32,9 +32,5 @@ const { Content } = await render(post);
     border: thick double gainsboro;
 
     padding-inline: 1ch;
-  }
-
-  dl {
-    color: lightgray;
   }
 </style>
