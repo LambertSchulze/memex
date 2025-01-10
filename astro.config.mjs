@@ -16,7 +16,7 @@ export default defineConfig({
         {
           permalinks: ["./"],
           aliasDivider: "|",
-          hrefTemplate: (link) => `memex/${link}`,
+          hrefTemplate: (link) => `/memex/${link}`,
           wikiLinkClassName: " ",
           newClassName: " ",
         },
