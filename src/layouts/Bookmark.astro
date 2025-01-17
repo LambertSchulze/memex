@@ -13,6 +13,7 @@ const { Content } = await render(post);
 <main>
   <article>
     <Content />
+    {post.data.source && <a href={post.data.source}>{post.data.source}</a>}
   </article>
 </main>
 
