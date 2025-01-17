@@ -41,7 +41,7 @@ const Songs = defineCollection({
 const Things = defineCollection({
   loader: glob({
     pattern: "*.md",
-    base: "./src/content/things",
+    base: "./src/content/Things",
   }),
   schema: z.object({
     category: z.enum(["Things"]),
