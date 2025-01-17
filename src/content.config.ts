@@ -1,67 +1,52 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-const bookmarks = defineCollection({
+const Bookmarks = defineCollection({
   loader: glob({
     pattern: "*.md",
-    base: "./src/content/bookmarks",
+    base: "./src/content/Bookmarks",
   }),
   schema: z.object({
-    date: z.date(),
+    category: z.enum(["Bookmarks"]),
     tags: z.array(z.string()).nullable(),
-    category: z.enum(["Bookmark"]),
+    source: z.string().url().optional(),
   }),
 });
 
-const quotes = defineCollection({
+const Quotes = defineCollection({
   loader: glob({
     pattern: "*.md",
-    base: "./src/content/quotes",
+    base: "./src/content/Quotes",
   }),
   schema: z.object({
-    date: z.date(),
+    category: z.enum(["Quotes"]),
     tags: z.array(z.string()).nullable(),
-    category: z.enum(["Quote"]),
   }),
 });
 
-const songs = defineCollection({
+const Songs = defineCollection({
   loader: glob({
     pattern: "*.md",
-    base: "./src/content/songs",
+    base: "./src/content/Songs",
   }),
   schema: z.object({
-    date: z.date(),
+    category: z.enum(["Songs"]),
     tags: z.array(z.string()).nullable(),
-    category: z.enum(["Song"]),
     title: z.string(),
     artist: z.string(),
     album: z.string(),
   }),
 });
 
-const things = defineCollection({
+const Things = defineCollection({
   loader: glob({
     pattern: "*.md",
     base: "./src/content/things",
   }),
   schema: z.object({
-    date: z.date(),
+    category: z.enum(["Things"]),
     tags: z.array(z.string()).nullable(),
-    category: z.enum(["Thing"]),
   }),
 });
 
-const other = defineCollection({
-  loader: glob({
-    pattern: "*.md",
-    base: "./src/content",
-  }),
-  schema: z.object({
-    date: z.date(),
-    tags: z.array(z.string()).nullable(),
-    category: z.string().nullable(),
-  }),
-});
-
-export const collections = { bookmarks, quotes, songs, things, other };
+export const collections = { Bookmarks, Quotes, Songs, Things };

@@ -2,11 +2,10 @@
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 
-const bookmarks = await getCollection("bookmarks");
-const quotes = await getCollection("quotes");
-const songs = await getCollection("songs");
-const things = await getCollection("things");
-const other = await getCollection("other");
+const bookmarks = await getCollection("Bookmarks");
+const quotes = await getCollection("Quotes");
+const songs = await getCollection("Songs");
+const things = await getCollection("Things");
 ---
 
 <Base title="Index">
@@ -49,17 +48,6 @@ const other = await getCollection("other");
   <ul>
     {
       things.map((p) => (
-        <li>
-          <a href={`/memex/${p.id}`}>{p.id}</a>
-        </li>
-      ))
-    }
-  </ul>
-
-  <h2>Other</h2>
-  <ul>
-    {
-      other.map((p) => (
         <li>
           <a href={`/memex/${p.id}`}>{p.id}</a>
         </li>
