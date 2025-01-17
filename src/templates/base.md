@@ -1,5 +1,0 @@
----
-date: {{date}}
-tags:
-category:
----
