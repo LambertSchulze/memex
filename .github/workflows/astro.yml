@@ -42,6 +42,15 @@ jobs:
         run: npm ci
         working-directory: ${{ env.BUILD_PATH }}
 
+      - name: Sync Submodule
+        uses: mheap/submodule-sync-action@v1
+        with:
+          path: src/content
+          ref: main
+          pr_branch: main
+          target_branch: main
+          pr_labels: "Update content submodule"
+
       - name: Build with Astro
         run: |
           npx --no-install astro build \
