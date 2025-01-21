@@ -7,7 +7,7 @@
     "allowJs": true, // required, and included with all Astro templates
     "baseUrl": ".",
     "paths": {
-      "@assets/*": ["/src/content/Assets/*"]
+      "@assets/*": ["/src/content/*"]
     }
   }
 }
