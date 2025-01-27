@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
+      - run: git submodule update --remote
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -41,15 +42,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
         working-directory: ${{ env.BUILD_PATH }}
-
-      - name: Sync Submodule
-        uses: mheap/submodule-sync-action@v1
-        with:
-          path: src/content
-          ref: main
-          pr_branch: main
-          target_branch: main
-          pr_labels: "Update content submodule"
 
       - name: Build with Astro
         run: |
