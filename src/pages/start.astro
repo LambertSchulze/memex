@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import Base from "../layouts/Base.astro";
+import Base from "src/layouts/Base.astro";
+import Link from "src/components/Link.astro";
 
 const bookmarks = await getCollection("Bookmarks");
 const quotes = await getCollection("Quotes");
@@ -16,7 +17,7 @@ const things = await getCollection("Things");
     {
       bookmarks.map((p) => (
         <li>
-          <a href={`/memex/${p.id}`}>{p.id}</a>
+          <Link href={p.id}>{p.id}</Link>
         </li>
       ))
     }
@@ -27,7 +28,7 @@ const things = await getCollection("Things");
     {
       quotes.map((p) => (
         <li>
-          <a href={`/memex/${p.id}`}>{p.id}</a>
+          <Link href={p.id}>{p.id}</Link>
         </li>
       ))
     }
@@ -38,7 +39,7 @@ const things = await getCollection("Things");
     {
       songs.map((p) => (
         <li>
-          <a href={`/memex/${p.id}`}>{p.id}</a>
+          <Link href={p.id}>{p.id}</Link>
         </li>
       ))
     }
@@ -49,7 +50,7 @@ const things = await getCollection("Things");
     {
       things.map((p) => (
         <li>
-          <a href={`/memex/${p.id}`}>{p.id}</a>
+          <Link href={p.id}>{p.id}</Link>
         </li>
       ))
     }

@@ -1,0 +1,10 @@
+---
+let { href } = Astro.props;
+
+href = href.startsWith("/") ? href : "/" + href;
+href = "/memex" + href;
+---
+
+<a href={href} >
+    <slot />
+</a>
