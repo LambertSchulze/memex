@@ -10,49 +10,50 @@ const things = await getCollection("Things");
 ---
 
 <Base title="Index">
-  <h1>Index</h1>
-
-  <h2>Bookmarks</h2>
-  <ul>
-    {
-      bookmarks.map((p) => (
-        <li>
-          <Link href={p.id}>{p.id}</Link>
-        </li>
-      ))
-    }
-  </ul>
-
-  <h2>Quotes</h2>
-  <ul>
-    {
-      quotes.map((p) => (
-        <li>
-          <Link href={p.id}>{p.id}</Link>
-        </li>
-      ))
-    }
-  </ul>
-
-  <h2>Songs</h2>
-  <ul>
-    {
-      songs.map((p) => (
-        <li>
-          <Link href={p.id}>{p.id}</Link>
-        </li>
-      ))
-    }
-  </ul>
-
-  <h2>Things</h2>
-  <ul>
-    {
-      things.map((p) => (
-        <li>
-          <Link href={p.id}>{p.id}</Link>
-        </li>
-      ))
-    }
-  </ul>
+    <main>
+        <p>
+            <b>Bookmarks</b>
+            {
+                bookmarks.map((p) => (
+                    <>
+                        <Link href={p.id}>{p.id}</Link>
+                        {", "}
+                    </>
+                ))
+            }
+        </p>
+        <p>
+            <b>Quotes</b>
+            {
+                quotes.map((p) => (
+                    <>
+                        <Link href={p.id}>{p.id}</Link>
+                        {", "}
+                    </>
+                ))
+            }
+        </p>
+        <p>
+            <b>Songs</b>
+            {
+                songs.map((p) => (
+                    <>
+                        <Link href={p.id}>{p.id}</Link>
+                        {", "}
+                    </>
+                ))
+            }
+        </p>
+        <p>
+            <b>Things</b>
+            {
+                things.map((p) => (
+                    <>
+                        <Link href={p.id}>{p.id}</Link>
+                        {", "}
+                    </>
+                ))
+            }
+        </p>
+    </main>
 </Base>
