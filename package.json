@@ -10,7 +10,7 @@
     "prettier": "npx prettier . --write"
   },
   "dependencies": {
-    "astro": "^5.1.1",
+    "astro": "^5.2.3",
     "astro-html-beautifier": "^1.0.4",
     "mdast-util-find-and-replace": "^3.0.2",
     "remark-wiki-link": "^2.0.1",
